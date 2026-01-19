@@ -53,7 +53,7 @@ class TexturesPreProcessor:
                     print(f"[ERROR] {folder_name} {png}: {e}")
 
                 if i % 100 == 0 or i == total:
-                    print(f"[MONITOR] {folder_name}: {i}/{total} done (ok={ok_count}, err={err_count}, skip={skip_count})")
+                    print(f"[PROG] {folder_name}: {i}/{total} done (ok={ok_count}, err={err_count}, skip={skip_count})")
 
             print(f"[DONE] {folder_name}: ok={ok_count}, err={err_count}, skip={skip_count}")
 
