@@ -11,6 +11,16 @@ from MetalnessMapCreator import MetalnessMapCreator, MetalnessMapConfig
 
 # Presets
 NORMAL_PRESETS = {
+    "potato_normal": NormalMapConfig(
+        strength=2.0,
+        edge_gamma=4.2,
+        edge_threshold=0.42,
+        blur_passes=3,
+        quantize_levels=128,
+        alpha_protect=True,
+        flip_y=False,
+        overwrite=True,
+    ),
     "low_normal": NormalMapConfig(
         strength=2.8,
         edge_gamma=3.2,
@@ -102,7 +112,7 @@ DEFAULT_METALNESS_PRESET = "medium_reflect"
 
 PATH_RULES = [
     ("block/casings/coils/", "ultra_normal", "low_reflect"),
-    ("block/casings/battery/", "low_normal", "medium_reflect"),
+    ("block/casings/battery/", "high_normal", "medium_reflect"),
     ("block/casings/", "extreme_normal", "low_reflect"),
     ("block/machines/", "high_normal", "medium_reflect"),
     ("block/overlay/", "high_normal", "medium_reflect"),
@@ -115,13 +125,16 @@ PATH_RULES = [
 ]
 
 NAME_RULES = [
-    # ("casing", "low_normal", "high_reflect"),
-    # ("rubber", "medium_normal", "low_reflect"),
-    # ("plastic", "medium_normal", "low_reflect"),
-    # ("glass", "high_normal", "low_reflect"),
-    # ("copper", "low_normal", "high_reflect"),
-    # ("iron", "low_normal", "high_reflect"),
-    # ("steel", "low_normal", "high_reflect"),
+    ("circuit_board", "low_normal", "medium_reflect"),
+    ("boule", "low_normal", "medium_reflect"),
+    ("wafer", "low_normal", "medium_reflect"),
+    ("integrated_circuit", "potato_normal", "medium_reflect"),
+    ("microchip_processor", "potato_normal", "medium_reflect"),
+    ("micro_processor", "potato_normal", "medium_reflect"),
+    ("nano_processor", "potato_normal", "medium_reflect"),
+    ("quantum_processor", "potato_normal", "medium_reflect"),
+    ("crystal_processor", "potato_normal", "medium_reflect"),
+    ("wetware_processor", "potato_normal", "medium_reflect"),
 ]
 
 
